@@ -4,6 +4,10 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+matplotlib = "*"
+jupyter = "*"
+pylint-flask = "*"
+flask = "*"
 
 [packages]
 flask = "*"
@@ -11,6 +15,8 @@ flask-sqlalchemy = "*"
 tweepy = "*"
 python-dotenv = "*"
 spacy = "*"
+scikit-learn = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.7"

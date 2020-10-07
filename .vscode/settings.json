@@ -1,0 +1,8 @@
+{
+    "python.dataScience.jupyterServerURI": "local",
+    "python.pythonPath": "C:\\Users\\iambr\\.virtualenvs\\twitoff-HVhNb7AO\\Scripts\\python.exe",
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint-flask"
+    ]
+}
