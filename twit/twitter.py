@@ -128,3 +128,8 @@ def add_user_history(username):
         # If no errors happend than commit the records
         DB.session.commit()
         print('Successfully saved tweets to DB!')
+
+def update_all_users():
+    '''This funcitons updates tweets for all users'''
+    for user in User.query.all():
+        add_user_tweepy(user.username)
