@@ -1,12 +1,15 @@
 from flask import Flask, render_template, request
-from .db_model import DB, User
+from .db_model import DB, User, Tweet
 from .twitter import add_user_tweepy, update_all_users
 from .predict import predict_user
+from dotenv import load_dotenv
+from os import getenv
+load_dotenv()
 
 def create_app():
     '''Create and configure an instance of our Flask application'''
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATBASE_URL')  # for absolute path
+    app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URL')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['FLASK_ENV'] = 'development' # Turns debug mode ON
     DB.init_app(app)  # Connect Flask app to SQLAlchemy DB
