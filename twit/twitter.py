@@ -14,7 +14,7 @@ TWITTER_AUTH.set_access_token(getenv('TWITTER_ACCESS_TOKEN'),
 TWITTER = tweepy.API(TWITTER_AUTH)
 
 # Load SpaCy pre-trained model
-nlp = spacy.load('en_core_web_md', disable=['tagger', 'parser'])
+nlp = spacy.load('en_core_web_sm', disable=['tagger', 'parser'])
 
 
 def vectorize_tweet(nlp, tweet_text):
