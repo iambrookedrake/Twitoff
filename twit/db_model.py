@@ -29,3 +29,5 @@ class Tweet(DB.Model):
 # To create the database:
 # from twit.db_model import DB, User, Tweet
 # DB.create_all()
+# to reset
+# DB.drop_all()
