@@ -41,14 +41,13 @@ def create_app():
         tweet_text = request.values['tweet_text']
 
         if user1 == user2:
-            message = 'Cannot compare a user to themselves! Select a second User.'
+            message = 'Cannot compare a user to themselves!'
         else:
-            prediction = int(predict_user(user1, user2, tweet_text)*100)
-            if prediction >= 50:
-                message = f'"{tweet_text}" is more likely to be said by {user1} than {user2}, with {prediction}% confidence.'
-            else:
-                message = f'"{tweet_text}" is more likely to be said by {user2} than {user1}, with {100-prediction}% confidence.'
-        
+            prediction = predict_user(user1, user2, tweet_text)
+
+            message = f'''{tweet_text} is more likely to be said by {user1 if prediction else user2} 
+                          than {user2 if prediction else user1}'''
+                          
         return render_template('predict.html', title='Prediction', message=message)
 
     @app.route('/reset304')
