@@ -8,7 +8,7 @@ class User(DB.Model):
     id = DB.Column(DB.BigInteger, primary_key=True)
     username = DB.Column(DB.String(80), unique=True, nullable=False)
     followers = DB.Column(DB.String(120), unique=True, nullable=False)
-    # Tweets IdDS are ordinal ints, so we can fetch most recent data
+    # Tweets IDs are ordinal ints, so we can fetch most recent data
     newest_tweet_id = DB.Column(DB.BigInteger, nullable=False)
 
     def __repr__(self):
