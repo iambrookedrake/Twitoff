@@ -2,9 +2,9 @@ from os import getenv
 import basilica
 import tweepy
 from dotenv import load_dotenv
-from .model import db, User, Tweet
+from .db_model import DB, User, Tweet
 load_dotenv()
-
+db=DB
 TWITTER_AUTH = tweepy.OAuthHandler(getenv('TWITTER_CONSUMER_API_KEY'),
                                    getenv('TWITTER_CONSUMER_API_SECRET'))
 TWITTER_AUTH.set_access_token(getenv('TWITTER_ACCESS_TOKEN'),

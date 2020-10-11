@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request
-from .model import db, User, Tweet
-from .twitter import add_user_tweepy, update_all_users
-from .predict import predict_user
+from .db_model import DB, User, Tweet
+from .twitter0 import add_user_tweepy, update_all_users
+from .predict0 import predict_user
 from dotenv import load_dotenv
 from os import getenv
 load_dotenv()
-
+db=DB
 def create_app():
     """Create and configure an instance of the Flask application"""
 
